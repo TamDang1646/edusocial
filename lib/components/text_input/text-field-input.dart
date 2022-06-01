@@ -2,27 +2,31 @@ import 'package:flutter/material.dart';
 import 'package:my_app/utils/app_utils.dart';
 
 class TextInputCustom extends StatefulWidget {
-  const TextInputCustom(
-      {Key? key,
-      this.label = "",
-      this.hintLabel = "",
-      this.height = 40,
-      this.obscureText = false,
-      this.icon,
-      this.prefixIcon,
-      this.suffixIcon,
-      this.suffixPress,
-      required this.controller})
-      : super(key: key);
-  final String label;
-  final String hintLabel;
-  final double height;
+  const TextInputCustom({
+    Key? key,
+    this.label,
+    this.hintLabel,
+    this.height = 40,
+    this.width,
+    this.obscureText = false,
+    this.icon,
+    this.prefixIcon,
+    this.suffixIcon,
+    this.suffixPress,
+    required this.controller,
+    required this.onChange,
+  }) : super(key: key);
+  final String? label;
+  final String? hintLabel;
+  final double? height;
+  final double? width;
   final bool obscureText;
   final Icon? icon;
   final Icon? prefixIcon;
   final IconData? suffixIcon;
-  final Function? suffixPress;
+  final Function()? suffixPress;
   final TextEditingController controller;
+  final Function(String) onChange;
   @override
   State<TextInputCustom> createState() => _TextInputCustomState();
 }
@@ -57,13 +61,14 @@ class _TextInputCustomState extends State<TextInputCustom> {
         icon: widget.icon,
         prefixIcon: widget.prefixIcon,
         suffixIcon: IconButton(
-          onPressed: () {},
+          onPressed: widget.suffixPress,
           icon: Icon(widget.suffixIcon),
           iconSize: 20,
           highlightColor: Colors.amber,
         ),
       ),
       obscureText: widget.obscureText,
+      onChanged: widget.onChange,
     );
   }
 }

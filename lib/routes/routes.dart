@@ -1,7 +1,5 @@
 class Routes {
-  static final String home_screen = "../screens/home_screen/home_screen.dart";
-  static final String login_screen = "../screens/login_screen/login_screen.dart";
-  // static final String signup_screen = "../screens/home_screen/home_screen.dart";
+  static const String homeScreen = "/home_screen";
+  static const String loginScreen = "/login_screen";
+  static const String signupScreen = "/signup_screen";
 }
-
-class RouteScreens {}
