@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:my_app/utils/app_utils.dart';
-import '../../components/button/button-custom.dart';
-import '../../components/text_input/text-field-input.dart';
 import '../../constains/images.dart';
+import '../../routes/routes.dart';
+import '../../widgets/button/button-custom.dart';
+import '../../widgets/text_input/text-field-input.dart';
 
 class SignUpScreen extends StatefulWidget {
   const SignUpScreen({Key? key}) : super(key: key);
@@ -60,78 +61,111 @@ class _SignUpScreenState extends State<SignUpScreen> with SingleTickerProviderSt
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Expanded(
-            flex: 5,
-            child: Image.asset(Images.logo),
+          Image.asset(Images.logo),
+          SizedBox(
+            height: Responsive.scale(30, context),
           ),
-          Expanded(
-            flex: 5,
-            child: Column(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 8),
-                  child: TextInputCustom(
-                    label: "Phone Number",
-                    // hintLabel: "Phone Number",
-                    suffixIcon: Icons.phone,
-                    controller: _sdtController,
-                    onChange: (text) => {
-                      setState(() {
-                        _sdtText = text;
-                      })
-                    },
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 8),
-                  child: TextInputCustom(
-                    label: "Password",
-                    obscureText: _showPass,
-                    suffixIcon: _showPass ? Icons.visibility : Icons.visibility_off,
-                    suffixPress: () => {
-                      setState(() {
-                        _showPass = !_showPass;
-                      }),
-                    },
-                    controller: _passController,
-                    onChange: (text) => {
-                      setState(() {
-                        _passText = text;
-                      })
-                    },
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 8),
-                  child: TextInputCustom(
-                    label: "Re-Password",
-                    obscureText: _showRePass,
-                    suffixIcon: _showRePass ? Icons.visibility : Icons.visibility_off,
-                    suffixPress: () => {
-                      setState(() {
-                        _showRePass = !_showRePass;
-                      }),
-                    },
-                    controller: _rePassController,
-                    onChange: (text) => {
-                      setState(() {
-                        _rePassText = text;
-                      })
-                    },
-                  ),
-                ),
-                SizedBox(height: Responsive.scale(30, context)),
-                RoundedButton(
-                  title: "Sign Up",
-                  onPressed: () {
-                    // ignore: avoid_print
-                    print("Tapped Me");
+          Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 8),
+                child: TextInputCustom(
+                  label: "Phone Number",
+                  // hintLabel: "Phone Number",
+                  suffixIcon: Icons.phone,
+                  controller: _sdtController,
+                  onChange: (text) => {
+                    setState(() {
+                      _sdtText = text;
+                    })
                   },
                 ),
-              ],
-            ),
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 8),
+                child: TextInputCustom(
+                  label: "Password",
+                  obscureText: _showPass,
+                  suffixIcon: _showPass ? Icons.visibility : Icons.visibility_off,
+                  suffixPress: () => {
+                    setState(() {
+                      _showPass = !_showPass;
+                    }),
+                  },
+                  controller: _passController,
+                  onChange: (text) => {
+                    setState(() {
+                      _passText = text;
+                    })
+                  },
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 8),
+                child: TextInputCustom(
+                  label: "Re-Password",
+                  obscureText: _showRePass,
+                  suffixIcon: _showRePass ? Icons.visibility : Icons.visibility_off,
+                  suffixPress: () => {
+                    setState(() {
+                      _showRePass = !_showRePass;
+                    }),
+                  },
+                  controller: _rePassController,
+                  onChange: (text) => {
+                    setState(() {
+                      _rePassText = text;
+                    })
+                  },
+                ),
+              ),
+              SizedBox(height: Responsive.scale(30, context)),
+              RoundedButton(
+                title: "Sign Up",
+                boxDecoration: BoxDecoration(
+                  gradient: const LinearGradient(
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                    colors: <Color>[
+                      Color(0xff1f005c),
+                      Color(0xff5b0060),
+                      Color(0xff870160),
+                      Color(0xffac255e),
+                      Color(0xffca485c),
+                      Color(0xffe16b5c),
+                      Color(0xfff39060),
+                      Color(0xffffb56b),
+                    ],
+                    tileMode: TileMode.mirror,
+                  ),
+                  borderRadius: BorderRadius.circular(Responsive.scale(20, context)),
+                ),
+                onPressed: () {
+                  // ignore: avoid_print
+                  print("Tapped Me");
+                },
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  const Text("Đã có tài khoản."),
+                  TextButton(
+                      onPressed: () {
+                        //   Navigator.push(builder: MainStack(context).stackScreen);
+                        // ignore: avoid_print
+                        print("register");
+                        Navigator.pop(context);
+                      },
+                      child: const Text("Đăng nhập ngay"))
+                ],
+              ),
+            ],
           ),
         ],
       ),

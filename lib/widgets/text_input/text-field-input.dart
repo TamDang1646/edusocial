@@ -6,27 +6,27 @@ class TextInputCustom extends StatefulWidget {
     Key? key,
     this.label,
     this.hintLabel,
-    this.height = 40,
-    this.width,
+    this.height = 50,
+    this.width = 330,
     this.obscureText = false,
     this.icon,
     this.prefixIcon,
     this.suffixIcon,
     this.suffixPress,
     required this.controller,
-    required this.onChange,
+    this.onChange,
   }) : super(key: key);
   final String? label;
   final String? hintLabel;
-  final double? height;
-  final double? width;
+  final double height;
+  final double width;
   final bool obscureText;
   final Icon? icon;
   final Icon? prefixIcon;
   final IconData? suffixIcon;
   final Function()? suffixPress;
   final TextEditingController controller;
-  final Function(String) onChange;
+  final Function(String)? onChange;
   @override
   State<TextInputCustom> createState() => _TextInputCustomState();
 }
@@ -49,26 +49,30 @@ class _TextInputCustomState extends State<TextInputCustom> {
 //   double _height = Responsive.scale(this.heigh,);
   @override
   Widget build(BuildContext context) {
-    return TextFormField(
-      controller: widget.controller,
-      decoration: InputDecoration(
-        contentPadding: EdgeInsets.all(16),
-        labelText: widget.label,
-        hintText: widget.hintLabel,
-        border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(8),
+    return Container(
+      width: Responsive.scale(widget.width, context),
+      height: Responsive.scale(widget.height, context),
+      child: TextFormField(
+        controller: widget.controller,
+        decoration: InputDecoration(
+          contentPadding: EdgeInsets.all(16),
+          labelText: widget.label,
+          hintText: widget.hintLabel,
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(8),
+          ),
+          icon: widget.icon,
+          prefixIcon: widget.prefixIcon,
+          suffixIcon: IconButton(
+            onPressed: widget.suffixPress,
+            icon: Icon(widget.suffixIcon),
+            iconSize: 20,
+            highlightColor: Colors.amber,
+          ),
         ),
-        icon: widget.icon,
-        prefixIcon: widget.prefixIcon,
-        suffixIcon: IconButton(
-          onPressed: widget.suffixPress,
-          icon: Icon(widget.suffixIcon),
-          iconSize: 20,
-          highlightColor: Colors.amber,
-        ),
+        obscureText: widget.obscureText,
+        onChanged: widget.onChange,
       ),
-      obscureText: widget.obscureText,
-      onChanged: widget.onChange,
     );
   }
 }

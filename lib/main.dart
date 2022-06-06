@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       initialRoute: Routes.loginScreen,
-      routes: MainStack(context).stackScreen,
+      routes: getRoutes(),
     );
   }
 }
