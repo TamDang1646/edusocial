@@ -1,23 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/widgets.dart';
+import 'package:my_app/utils/app_utils.dart';
 
 class Avatar extends StatelessWidget {
-  const Avatar({super.key, this.name});
-  final String? name;
+  const Avatar({Key? key, required this.url, this.width, this.height, this.localUrl}) : super(key: key);
+  final String url;
+  final String? localUrl;
+  final double? width;
+  final double? height;
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 40,
-      height: 40,
-      child: Column(
-        children: const [
-          CircleAvatar(
-            backgroundImage:
-                NetworkImage("https://img.websosanh.vn/v2/users/review/images/4wvuq0i4ozs1q.jpg?compress=85"),
-          ),
-          // if (name != null) Text(name!)
-        ],
+      width: Responsive.scale(width ?? 40, context),
+      height: Responsive.scale(height ?? 40, context),
+      child: CircleAvatar(
+        backgroundImage: url.isNotEmpty ? NetworkImage(url) : AssetImage(localUrl!) as ImageProvider,
+        //   backgroundImage: NetworkImage(url),
       ),
     );
   }

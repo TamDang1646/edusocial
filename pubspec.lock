@@ -29,6 +29,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.1.0"
+  carousel_slider:
+    dependency: "direct main"
+    description:
+      name: carousel_slider
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "4.1.1"
   characters:
     dependency: transitive
     description:
@@ -114,6 +121,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "3.2.0"
+  infinite_scroll_pagination:
+    dependency: "direct main"
+    description:
+      name: infinite_scroll_pagination
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "3.2.0"
   js:
     dependency: transitive
     description:
@@ -148,21 +162,21 @@ packages:
       name: material_color_utilities
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.1.4"
+    version: "0.1.5"
   meta:
     dependency: transitive
     description:
       name: meta
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.7.0"
+    version: "1.8.0"
   path:
     dependency: transitive
     description:
       name: path
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.8.1"
+    version: "1.8.2"
   path_drawing:
     dependency: transitive
     description:
@@ -189,6 +203,13 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.99"
+  sliver_tools:
+    dependency: transitive
+    description:
+      name: sliver_tools
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.2.6"
   source_span:
     dependency: transitive
     description:
