@@ -6,10 +6,12 @@ import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
 import 'package:my_app/Model/Posts.dart';
 import 'package:my_app/constains/app_colors.dart';
 import 'package:my_app/constains/mock_data.dart';
+import 'package:my_app/constains/posts.dart';
+import 'package:my_app/log/logger.dart';
 import 'package:my_app/utils/app_utils.dart';
 import 'package:my_app/widgets/avatar/avatar_name.dart';
-import 'package:my_app/widgets/scrollview_infinite/scrollview_infinite.dart';
-
+import 'package:my_app/widgets/scrollview_infinite/home_posts_view.dart';
+import 'dart:developer';
 import '../../widgets/avatar/avatar.dart';
 import '../../widgets/bottom_bar/bottom_bar.dart';
 import '../../widgets/post_view/post_view.dart';
@@ -25,6 +27,14 @@ class _MyHomeScreenState extends State<MyHomeScreen> {
   final _listTimeLineKey = GlobalKey();
   final _listPostKey = GlobalKey();
 //   final _pagingController =
+  var post;
+  @override
+  void initState() {
+    // TODO: implement initState
+    post = PostServices().getPosts();
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     print("home");
@@ -96,41 +106,10 @@ class _MyHomeScreenState extends State<MyHomeScreen> {
               ),
             ),
             Expanded(
-              //   padding: EdgeInsets.all(0),
-              child: Container(
-                decoration: BoxDecoration(color: AppColors.gray1),
-                // child: MediaQuery.removePadding(
-                //   removeTop: true,
-                //   context: context,
-                //   child: FutureBuilder<List<Posts>>(
-                //       future: PostServices().getPosts(),
-                //       builder: (context, snapshot) {
-                //         return ListView.builder(
-                //           shrinkWrap: true,
-                //           key: _listPostKey,
-                //           // scrollDirection: Axis.horizontal,
-                //           itemBuilder: (context, index) {
-                //             return PostView(
-                //               post: snapshot.data![index],
-                //             );
-                //           },
-                //           itemCount: mockPosts.length,
-                //         );
-                //       }),
-                // ),
-                child: ScrollViewInfinite(
-                  data: PostServices().getPosts(),
-                  itemBuilder: Padding(
-                    padding: const EdgeInsets.all(16.0),
-                    child: Container(
-                      color: Colors.green,
-                      width: 200,
-                      height: 100,
-                    ),
-                  ),
-                ),
-              ),
-            ),
+                //   padding: EdgeInsets.all(0),
+                child: PostScrollView(
+              data: post,
+            )),
           ],
         ),
       ),

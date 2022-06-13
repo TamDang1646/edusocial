@@ -1,13 +1,13 @@
 const List<Map<dynamic, dynamic>> mockTimeline = [
-  {'name': "Jobn", 'avatarUrl': "https://i.pinimg.com/564x/18/bb/82/18bb82c6c9ada36a3c157606c8dd449b.jpg"},
-  {'name': "Hers", 'avatarUrl': "https://i.pinimg.com/564x/6a/ff/10/6aff10dff121ec3c4a867b62187b74a0.jpg"},
-  {'name': "Davs", 'avatarUrl': "https://i.pinimg.com/564x/f4/75/35/f47535c4c80a96836b4d151f7e6cc055.jpg"},
-  {'name': "Ckds", 'avatarUrl': "https://i.pinimg.com/564x/f4/18/4a/f4184afa59020d3b0d6c1464c7d5d83c.jpg"},
-  {'name': "Mihfkđ", 'avatarUrl': "https://i.pinimg.com/564x/20/59/9a/20599a1061c39e72bfdfc46a52d1a2a1.jpg"},
-  {'name': "CMMvoaiw", 'avatarUrl': "https://i.pinimg.com/564x/a4/ee/a3/a4eea30c3e2519824a1467505e4a5ca8.jpg"},
-  {'name': "Cein Fse", 'avatarUrl': "https://i.pinimg.com/564x/a1/c7/a2/a1c7a2192ddac6d7ec2a4ebe19e03fac.jpg"},
-  {'name': "Cwaacs fw", 'avatarUrl': "https://i.pinimg.com/564x/08/93/ae/0893aec11c6d641173f29c130de260a0.jpg"},
-  {'name': "Nieaam sce", 'avatarUrl': "https://i.pinimg.com/564x/25/77/e5/2577e5ec12e34d376fce8fe074634e2c.jpg"},
+  {"name": "Jobn", "avatarUrl": "https://i.pinimg.com/564x/18/bb/82/18bb82c6c9ada36a3c157606c8dd449b.jpg"},
+  {"name": "Hers", "avatarUrl": "https://i.pinimg.com/564x/6a/ff/10/6aff10dff121ec3c4a867b62187b74a0.jpg"},
+  {"name": "Davs", "avatarUrl": "https://i.pinimg.com/564x/f4/75/35/f47535c4c80a96836b4d151f7e6cc055.jpg"},
+  {"name": "Ckds", "avatarUrl": "https://i.pinimg.com/564x/f4/18/4a/f4184afa59020d3b0d6c1464c7d5d83c.jpg"},
+  {"name": "Mihfkđ", "avatarUrl": "https://i.pinimg.com/564x/20/59/9a/20599a1061c39e72bfdfc46a52d1a2a1.jpg"},
+  {"name": "CMMvoaiw", "avatarUrl": "https://i.pinimg.com/564x/a4/ee/a3/a4eea30c3e2519824a1467505e4a5ca8.jpg"},
+  {"name": "Cein Fse", "avatarUrl": "https://i.pinimg.com/564x/a1/c7/a2/a1c7a2192ddac6d7ec2a4ebe19e03fac.jpg"},
+  {"name": "Cwaacs fw", "avatarUrl": "https://i.pinimg.com/564x/08/93/ae/0893aec11c6d641173f29c130de260a0.jpg"},
+  {"name": "Nieaam sce", "avatarUrl": "https://i.pinimg.com/564x/25/77/e5/2577e5ec12e34d376fce8fe074634e2c.jpg"},
 ];
 const List<Map<String, dynamic>> mockPosts = [
   {
@@ -22,7 +22,7 @@ const List<Map<String, dynamic>> mockPosts = [
     "like": 25,
     "comment": 28,
     "images": "str2",
-    'avatarUrl': "https://i.pinimg.com/564x/18/bb/82/18bb82c6c9ada36a3c157606c8dd449b.jpg",
+    "avatarUrl": "https://i.pinimg.com/564x/18/bb/82/18bb82c6c9ada36a3c157606c8dd449b.jpg",
     "share": 10,
   },
   {
@@ -37,7 +37,7 @@ const List<Map<String, dynamic>> mockPosts = [
     "like": 50,
     "comment": 85,
     "images": "str2",
-    'avatarUrl': "https://i.pinimg.com/564x/6a/ff/10/6aff10dff121ec3c4a867b62187b74a0.jpg",
+    "avatarUrl": "https://i.pinimg.com/564x/6a/ff/10/6aff10dff121ec3c4a867b62187b74a0.jpg",
     "share": 15,
   },
   {
@@ -52,7 +52,7 @@ const List<Map<String, dynamic>> mockPosts = [
     "like": 3,
     "comment": 70,
     "images": "str3",
-    'avatarUrl': "https://i.pinimg.com/564x/f4/75/35/f47535c4c80a96836b4d151f7e6cc055.jpg"
+    "avatarUrl": "https://i.pinimg.com/564x/f4/75/35/f47535c4c80a96836b4d151f7e6cc055.jpg"
   },
   {
     "id": 4,
@@ -66,7 +66,7 @@ const List<Map<String, dynamic>> mockPosts = [
     "like": 21,
     "comment": 81,
     "images": "str1",
-    'avatarUrl': "https://i.pinimg.com/564x/f4/18/4a/f4184afa59020d3b0d6c1464c7d5d83c.jpg"
+    "avatarUrl": "https://i.pinimg.com/564x/f4/18/4a/f4184afa59020d3b0d6c1464c7d5d83c.jpg"
   },
   {
     "id": 5,
@@ -80,7 +80,7 @@ const List<Map<String, dynamic>> mockPosts = [
     "like": 10,
     "comment": 12,
     "images": "str3",
-    'avatarUrl': "https://i.pinimg.com/564x/20/59/9a/20599a1061c39e72bfdfc46a52d1a2a1.jpg"
+    "avatarUrl": "https://i.pinimg.com/564x/20/59/9a/20599a1061c39e72bfdfc46a52d1a2a1.jpg"
   },
   {
     "id": 6,
@@ -94,7 +94,7 @@ const List<Map<String, dynamic>> mockPosts = [
     "like": 3,
     "comment": 89,
     "images": "str1",
-    'avatarUrl': "https://i.pinimg.com/564x/a4/ee/a3/a4eea30c3e2519824a1467505e4a5ca8.jpg"
+    "avatarUrl": "https://i.pinimg.com/564x/a4/ee/a3/a4eea30c3e2519824a1467505e4a5ca8.jpg"
   },
   {
     "id": 7,
@@ -108,7 +108,7 @@ const List<Map<String, dynamic>> mockPosts = [
     "like": 61,
     "comment": 55,
     "images": "str3",
-    'avatarUrl': "https://i.pinimg.com/564x/a1/c7/a2/a1c7a2192ddac6d7ec2a4ebe19e03fac.jpg"
+    "avatarUrl": "https://i.pinimg.com/564x/a1/c7/a2/a1c7a2192ddac6d7ec2a4ebe19e03fac.jpg"
   },
   {
     "id": 8,
@@ -122,7 +122,7 @@ const List<Map<String, dynamic>> mockPosts = [
     "like": 91,
     "comment": 41,
     "images": "str1",
-    'avatarUrl': "https://i.pinimg.com/564x/08/93/ae/0893aec11c6d641173f29c130de260a0.jpg"
+    "avatarUrl": "https://i.pinimg.com/564x/08/93/ae/0893aec11c6d641173f29c130de260a0.jpg"
   },
   {
     "id": 9,
@@ -136,7 +136,7 @@ const List<Map<String, dynamic>> mockPosts = [
     "like": 41,
     "comment": 98,
     "images": "str2",
-    'avatarUrl': "https://i.pinimg.com/564x/08/93/ae/0893aec11c6d641173f29c130de260a0.jpg"
+    "avatarUrl": "https://i.pinimg.com/564x/08/93/ae/0893aec11c6d641173f29c130de260a0.jpg"
   },
   {
     "id": 10,
@@ -150,7 +150,7 @@ const List<Map<String, dynamic>> mockPosts = [
     "like": 19,
     "comment": 76,
     "images": "str1",
-    'avatarUrl': "https://i.pinimg.com/564x/25/77/e5/2577e5ec12e34d376fce8fe074634e2c.jpg"
+    "avatarUrl": "https://i.pinimg.com/564x/25/77/e5/2577e5ec12e34d376fce8fe074634e2c.jpg"
   },
   {
     "id": 11,
@@ -164,7 +164,7 @@ const List<Map<String, dynamic>> mockPosts = [
     "like": 92,
     "comment": 57,
     "images": "str3",
-    'avatarUrl': "https://i.pinimg.com/564x/25/77/e5/2577e5ec12e34d376fce8fe074634e2c.jpg"
+    "avatarUrl": "https://i.pinimg.com/564x/25/77/e5/2577e5ec12e34d376fce8fe074634e2c.jpg"
   },
   {
     "id": 12,
@@ -178,7 +178,7 @@ const List<Map<String, dynamic>> mockPosts = [
     "like": 34,
     "comment": 56,
     "images": "str2",
-    'avatarUrl': "https://i.pinimg.com/564x/25/77/e5/2577e5ec12e34d376fce8fe074634e2c.jpg"
+    "avatarUrl": "https://i.pinimg.com/564x/25/77/e5/2577e5ec12e34d376fce8fe074634e2c.jpg"
   },
   {
     "id": 13,
@@ -192,7 +192,7 @@ const List<Map<String, dynamic>> mockPosts = [
     "like": 5,
     "comment": 1,
     "images": "str3",
-    'avatarUrl': "https://i.pinimg.com/564x/25/77/e5/2577e5ec12e34d376fce8fe074634e2c.jpg"
+    "avatarUrl": "https://i.pinimg.com/564x/25/77/e5/2577e5ec12e34d376fce8fe074634e2c.jpg"
   },
   {
     "id": 14,
@@ -206,7 +206,7 @@ const List<Map<String, dynamic>> mockPosts = [
     "like": 98,
     "comment": 27,
     "images": "str3",
-    'avatarUrl': "https://i.pinimg.com/564x/25/77/e5/2577e5ec12e34d376fce8fe074634e2c.jpg"
+    "avatarUrl": "https://i.pinimg.com/564x/25/77/e5/2577e5ec12e34d376fce8fe074634e2c.jpg"
   },
   {
     "id": 15,
@@ -220,7 +220,7 @@ const List<Map<String, dynamic>> mockPosts = [
     "like": 99,
     "comment": 18,
     "images": "str1",
-    'avatarUrl': "https://i.pinimg.com/564x/25/77/e5/2577e5ec12e34d376fce8fe074634e2c.jpg"
+    "avatarUrl": "https://i.pinimg.com/564x/25/77/e5/2577e5ec12e34d376fce8fe074634e2c.jpg"
   },
   {
     "id": 16,
@@ -234,7 +234,7 @@ const List<Map<String, dynamic>> mockPosts = [
     "like": 83,
     "comment": 4,
     "images": "str3",
-    'avatarUrl': "https://i.pinimg.com/564x/25/77/e5/2577e5ec12e34d376fce8fe074634e2c.jpg"
+    "avatarUrl": "https://i.pinimg.com/564x/25/77/e5/2577e5ec12e34d376fce8fe074634e2c.jpg"
   },
   {
     "id": 17,
@@ -248,7 +248,7 @@ const List<Map<String, dynamic>> mockPosts = [
     "like": 68,
     "comment": 52,
     "images": "str2",
-    'avatarUrl': "https://i.pinimg.com/564x/25/77/e5/2577e5ec12e34d376fce8fe074634e2c.jpg"
+    "avatarUrl": "https://i.pinimg.com/564x/25/77/e5/2577e5ec12e34d376fce8fe074634e2c.jpg"
   },
   {
     "id": 18,
@@ -262,7 +262,7 @@ const List<Map<String, dynamic>> mockPosts = [
     "like": 28,
     "comment": 10,
     "images": "str3",
-    'avatarUrl': "https://i.pinimg.com/564x/25/77/e5/2577e5ec12e34d376fce8fe074634e2c.jpg"
+    "avatarUrl": "https://i.pinimg.com/564x/25/77/e5/2577e5ec12e34d376fce8fe074634e2c.jpg"
   },
   {
     "id": 19,
@@ -276,7 +276,7 @@ const List<Map<String, dynamic>> mockPosts = [
     "like": 10,
     "comment": 11,
     "images": "str3",
-    'avatarUrl': "https://i.pinimg.com/564x/25/77/e5/2577e5ec12e34d376fce8fe074634e2c.jpg"
+    "avatarUrl": "https://i.pinimg.com/564x/25/77/e5/2577e5ec12e34d376fce8fe074634e2c.jpg"
   },
   {
     "id": 20,
@@ -290,6 +290,6 @@ const List<Map<String, dynamic>> mockPosts = [
     "like": 41,
     "comment": 26,
     "images": "str2",
-    'avatarUrl': "https://i.pinimg.com/564x/25/77/e5/2577e5ec12e34d376fce8fe074634e2c.jpg"
+    "avatarUrl": "https://i.pinimg.com/564x/25/77/e5/2577e5ec12e34d376fce8fe074634e2c.jpg"
   }
 ];

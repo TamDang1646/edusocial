@@ -5,4 +5,5 @@ class Routes {
   static const String forgotPasswordScreen = "/forgot_password_screen";
   static const String changePasswordScreen = "/change_password_screen";
   static const String otpScreen = "/otp_screen";
+  static const String postDetailScreen = "/post_detail_screen";
 }
