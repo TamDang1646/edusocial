@@ -23,7 +23,7 @@ class TextInputCustom extends StatefulWidget {
   final bool obscureText;
   final Icon? icon;
   final Icon? prefixIcon;
-  final IconData? suffixIcon;
+  final Widget? suffixIcon;
   final Function()? suffixPress;
   final TextEditingController controller;
   final Function(String)? onChange;
@@ -63,12 +63,7 @@ class _TextInputCustomState extends State<TextInputCustom> {
           ),
           icon: widget.icon,
           prefixIcon: widget.prefixIcon,
-          suffixIcon: IconButton(
-            onPressed: widget.suffixPress,
-            icon: Icon(widget.suffixIcon),
-            iconSize: 20,
-            highlightColor: Colors.amber,
-          ),
+          suffixIcon: widget.suffixIcon,
         ),
         obscureText: widget.obscureText,
         onChanged: widget.onChange,

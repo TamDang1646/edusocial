@@ -82,12 +82,22 @@ class _NewPasswordScreenState extends State<NewPasswordScreen> {
                 padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 8),
                 child: TextInputCustom(
                   label: "New-Password",
-                  suffixIcon: _showPass ? Icons.visibility : Icons.visibility_off,
-                  suffixPress: () => {
-                    setState(() {
-                      _showPass = !_showPass;
-                    }),
-                  },
+                  suffixIcon: IconButton(
+                    onPressed: () => {
+                      setState(() {
+                        _showPass = !_showPass;
+                      }),
+                    },
+                    icon: Icon(_showPass ? Icons.visibility : Icons.visibility_off),
+                    iconSize: 20,
+                    highlightColor: Colors.amber,
+                  ),
+                  //   suffixIcon: _showPass ? Icons.visibility : Icons.visibility_off,
+                  //   suffixPress: () => {
+                  //     setState(() {
+                  //       _showPass = !_showPass;
+                  //     }),
+                  //   },
                   controller: _passwordController,
                   obscureText: _showPass,
                 ),
@@ -97,12 +107,22 @@ class _NewPasswordScreenState extends State<NewPasswordScreen> {
                   child: TextInputCustom(
                     label: "Re-Password",
                     obscureText: _showRePass,
-                    suffixIcon: _showRePass ? Icons.visibility : Icons.visibility_off,
-                    suffixPress: () => {
-                      setState(() {
-                        _showRePass = !_showRePass;
-                      }),
-                    },
+                    suffixIcon: IconButton(
+                      onPressed: () => {
+                        setState(() {
+                          _showRePass = !_showRePass;
+                        }),
+                      },
+                      icon: Icon(_showPass ? Icons.visibility : Icons.visibility_off),
+                      iconSize: 20,
+                      highlightColor: Colors.amber,
+                    ),
+                    // suffixIcon: _showRePass ? Icons.visibility : Icons.visibility_off,
+                    // suffixPress: () => {
+                    //   setState(() {
+                    //     _showRePass = !_showRePass;
+                    //   }),
+                    // },
                     controller: _passController,
                   )),
               SizedBox(height: Responsive.scale(30, context)),

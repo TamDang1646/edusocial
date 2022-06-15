@@ -75,22 +75,23 @@ class _PostViewState extends State<PostView> {
                             textAlign: TextAlign.left,
                             text: TextSpan(
                               text: _post.userName,
-                              style: const TextStyle(fontWeight: FontWeight.bold, color: Colors.black),
+                              style: const TextStyle(fontWeight: FontWeight.bold, color: Colors.black, fontSize: 18),
                               children: [
                                 if (_post.postAddress != null)
                                   TextSpan(
                                       text: ' is in ',
-                                      style: const TextStyle(fontWeight: FontWeight.normal),
+                                      style: const TextStyle(fontWeight: FontWeight.normal, fontSize: 15),
                                       children: [
                                         TextSpan(
                                           text: _post.postAddress,
-                                          style: const TextStyle(fontWeight: FontWeight.bold),
+                                          style: const TextStyle(fontWeight: FontWeight.w600),
                                         ),
                                       ]),
                               ],
                             ),
                           ),
                         ),
+                        SizedBox(height: 8),
                         Text(
                           _post.postTime!,
                           style: TextStyle(

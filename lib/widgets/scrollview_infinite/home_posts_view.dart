@@ -5,6 +5,8 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
 import 'package:my_app/Model/Posts.dart';
+import 'package:my_app/routes/routes.dart';
+import 'package:my_app/screens/post_detail/post_detail.dart';
 import 'package:my_app/widgets/post_view/post_view.dart';
 
 class PostScrollView extends StatefulWidget {
@@ -16,7 +18,7 @@ class PostScrollView extends StatefulWidget {
 
 class _ScrollViewInfiniteState extends State<PostScrollView> {
   static const _pageSize = 10;
-
+  late ScrollController scrollController;
   final PagingController<int, Posts> _pagingController = PagingController(firstPageKey: 0);
   @override
   void initState() {
@@ -31,13 +33,6 @@ class _ScrollViewInfiniteState extends State<PostScrollView> {
   }
 
   @override
-//   Widget build(BuildContext context) => PagedListView<int, Posts>(
-//         pagingController: _pagingController,
-//         builderDelegate: PagedChildBuilderDelegate<Posts>(
-//             itemBuilder: (context, item, index) => PostView(
-//                   post: item,
-//                 )),
-//       );
   Widget build(BuildContext context) => FutureBuilder(
       future: widget.data,
       builder: (context, AsyncSnapshot snapshot) {
@@ -45,13 +40,19 @@ class _ScrollViewInfiniteState extends State<PostScrollView> {
           return const Center(child: CircularProgressIndicator());
         } else {
           return ListView.builder(
-              itemCount: _fetchPage(1),
-              scrollDirection: Axis.vertical,
-              itemBuilder: (BuildContext context, int index) {
-                return PostView(
-                  post: snapshot.data[index],
-                );
-              });
+            itemCount: _fetchPage(1),
+            scrollDirection: Axis.vertical,
+            itemBuilder: (BuildContext context, int index) {
+              return PostView(
+                post: snapshot.data[index],
+                onTap: () => Navigator.pushNamed(
+                  context,
+                  Routes.postDetailScreen,
+                  arguments: PostDetailState(postDetail: snapshot.data[index]),
+                ),
+              );
+            },
+          );
         }
       });
   @override

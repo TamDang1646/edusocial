@@ -77,7 +77,7 @@ class _SignUpScreenState extends State<SignUpScreen> with SingleTickerProviderSt
                 child: TextInputCustom(
                   label: "Phone Number",
                   // hintLabel: "Phone Number",
-                  suffixIcon: Icons.phone,
+                  suffixIcon: const Icon(Icons.phone),
                   controller: _sdtController,
                   onChange: (text) => {
                     setState(() {
@@ -91,12 +91,16 @@ class _SignUpScreenState extends State<SignUpScreen> with SingleTickerProviderSt
                 child: TextInputCustom(
                   label: "Password",
                   obscureText: _showPass,
-                  suffixIcon: _showPass ? Icons.visibility : Icons.visibility_off,
-                  suffixPress: () => {
-                    setState(() {
-                      _showPass = !_showPass;
-                    }),
-                  },
+                  suffixIcon: IconButton(
+                    onPressed: () => {
+                      setState(() {
+                        _showPass = !_showPass;
+                      }),
+                    },
+                    icon: Icon(_showPass ? Icons.visibility : Icons.visibility_off),
+                    iconSize: 20,
+                    highlightColor: Colors.amber,
+                  ),
                   controller: _passController,
                   onChange: (text) => {
                     setState(() {
@@ -110,12 +114,16 @@ class _SignUpScreenState extends State<SignUpScreen> with SingleTickerProviderSt
                 child: TextInputCustom(
                   label: "Re-Password",
                   obscureText: _showRePass,
-                  suffixIcon: _showRePass ? Icons.visibility : Icons.visibility_off,
-                  suffixPress: () => {
-                    setState(() {
-                      _showRePass = !_showRePass;
-                    }),
-                  },
+                  suffixIcon: IconButton(
+                    onPressed: () => {
+                      setState(() {
+                        _showRePass = !_showRePass;
+                      }),
+                    },
+                    icon: Icon(_showRePass ? Icons.visibility : Icons.visibility_off),
+                    iconSize: 20,
+                    highlightColor: Colors.amber,
+                  ),
                   controller: _rePassController,
                   onChange: (text) => {
                     setState(() {

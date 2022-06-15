@@ -8,10 +8,12 @@ import 'package:my_app/constains/app_colors.dart';
 import 'package:my_app/constains/mock_data.dart';
 import 'package:my_app/constains/posts.dart';
 import 'package:my_app/log/logger.dart';
+import 'package:my_app/services/user/user_service.dart';
 import 'package:my_app/utils/app_utils.dart';
 import 'package:my_app/widgets/avatar/avatar_name.dart';
 import 'package:my_app/widgets/scrollview_infinite/home_posts_view.dart';
 import 'dart:developer';
+import '../../Model/User.dart';
 import '../../widgets/avatar/avatar.dart';
 import '../../widgets/bottom_bar/bottom_bar.dart';
 import '../../widgets/post_view/post_view.dart';
@@ -27,7 +29,9 @@ class _MyHomeScreenState extends State<MyHomeScreen> {
   final _listTimeLineKey = GlobalKey();
   final _listPostKey = GlobalKey();
 //   final _pagingController =
+
   var post;
+
   @override
   void initState() {
     // TODO: implement initState
@@ -39,7 +43,6 @@ class _MyHomeScreenState extends State<MyHomeScreen> {
   Widget build(BuildContext context) {
     print("home");
     return Scaffold(
-      bottomNavigationBar: const BottomBar(),
       body: Container(
         decoration: BoxDecoration(color: AppColors.background),
         child: Column(
@@ -51,38 +54,45 @@ class _MyHomeScreenState extends State<MyHomeScreen> {
               height: Responsive.scale(60, context),
               padding: EdgeInsets.symmetric(horizontal: Responsive.scale(16, context)),
               decoration: BoxDecoration(color: AppColors.background),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  const Avatar(
-                    url: "https://img.websosanh.vn/v2/users/review/images/4wvuq0i4ozs1q.jpg?compress=85",
-                  ),
-                  const SizedBox(
-                    width: 20,
-                  ),
-                  Text("My Name",
-                      style: TextStyle(
-                        fontSize: Responsive.scale(18, context),
-                        fontWeight: FontWeight.bold,
-                      )),
-                  const Expanded(child: SizedBox()),
-                  Center(
-                    child: Ink(
-                      decoration: const ShapeDecoration(
-                        shape: CircleBorder(),
-                      ),
-                      child: IconButton(
-                        icon: Icon(
-                          Icons.search,
-                          size: Responsive.scale(22, context),
+              child: FutureBuilder<User>(
+                  future: UserService().getUser(),
+                  builder: (context, snapshot) {
+                    if (!snapshot.hasData) {
+                      return Container();
+                    }
+                    return Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Avatar(
+                          url: snapshot.data!.avatar!,
                         ),
-                        onPressed: () {},
-                      ),
-                    ),
-                  ),
-                ],
-              ),
+                        const SizedBox(
+                          width: 20,
+                        ),
+                        Text(snapshot.data!.userName!,
+                            style: TextStyle(
+                              fontSize: Responsive.scale(18, context),
+                              fontWeight: FontWeight.bold,
+                            )),
+                        const Expanded(child: SizedBox()),
+                        Center(
+                          child: Ink(
+                            decoration: const ShapeDecoration(
+                              shape: CircleBorder(),
+                            ),
+                            child: IconButton(
+                              icon: Icon(
+                                Icons.search,
+                                size: Responsive.scale(22, context),
+                              ),
+                              onPressed: () {},
+                            ),
+                          ),
+                        ),
+                      ],
+                    );
+                  }),
             ),
             Container(
               height: Responsive.scale(100, context),

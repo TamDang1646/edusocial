@@ -70,7 +70,7 @@ class _LoginScreenState extends State<LoginScreen> with SingleTickerProviderStat
                 child: TextInputCustom(
                   label: "Phone Number",
                   // hintLabel: "Phone Number",
-                  suffixIcon: Icons.phone,
+                  suffixIcon: Icon(Icons.phone),
                   controller: _sdtController,
                   //   onChange: (text) => {
                   //     setState(() {
@@ -84,12 +84,22 @@ class _LoginScreenState extends State<LoginScreen> with SingleTickerProviderStat
                   child: TextInputCustom(
                     label: "Password",
                     obscureText: _showPass,
-                    suffixIcon: _showPass ? Icons.visibility : Icons.visibility_off,
-                    suffixPress: () => {
-                      setState(() {
-                        _showPass = !_showPass;
-                      }),
-                    },
+                    suffixIcon: IconButton(
+                      onPressed: () => {
+                        setState(() {
+                          _showPass = !_showPass;
+                        }),
+                      },
+                      icon: Icon(_showPass ? Icons.visibility : Icons.visibility_off),
+                      iconSize: 20,
+                      highlightColor: Colors.amber,
+                    ),
+                    // suffixIcon: _showPass ? Icons.visibility : Icons.visibility_off,
+                    // suffixPress: () => {
+                    //   setState(() {
+                    //     _showPass = !_showPass;
+                    //   }),
+                    // },
                     controller: _passController,
                     // onChange: (text) => {
                     //   setState(() {

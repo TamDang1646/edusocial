@@ -6,6 +6,7 @@ import 'package:my_app/screens/signup_screen/signup_screen.dart';
 
 import 'routes/screen_stack.dart';
 import 'screens/home_screen/home_screen.dart';
+import 'screens/main_screen/main_screen.dart';
 
 void main() {
 //   WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
@@ -19,10 +20,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'EduSocial',
       debugShowCheckedModeBanner: false,
       initialRoute: Routes.loginScreen,
       routes: getRoutes(),
+      theme: ThemeData(fontFamily: "Roboto-Regular"),
     );
   }
 }

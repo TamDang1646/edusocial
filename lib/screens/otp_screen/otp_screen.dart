@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:my_app/constains/app_constaint.dart';
+import 'package:my_app/screens/home_screen/home_screen.dart';
+import 'package:my_app/screens/main_screen/main_screen.dart';
 import 'package:my_app/widgets/flash_message/flash_message.dart';
 
 import '../../constains/images.dart';
@@ -83,7 +85,12 @@ class _OTPScreenState extends State<OTPScreen> {
                 child: TextInputCustom(
                   label: "Phone Number",
                   // hintLabel: "Phone Number",
-                  suffixIcon: Icons.phone,
+                  suffixIcon: IconButton(
+                    onPressed: () {},
+                    icon: Icon(Icons.phone),
+                    iconSize: 20,
+                    highlightColor: Colors.amber,
+                  ),
                   controller: _sdtController,
                   //   onChange: (text) => {
                   //     setState(() {
@@ -162,7 +169,12 @@ class _OTPScreenState extends State<OTPScreen> {
                   //   if (_sdtController.value == _validatePhone && _otpController.value == _validateOTP) {
                   //     Navigator.pushNamed(context, Routes.homeScreen);
                   //   } else {}
-                  Navigator.pushNamed(context, Routes.forgotPasswordScreen);
+                  Navigator.pushAndRemoveUntil(
+                    context,
+                    MaterialPageRoute<void>(builder: (BuildContext context) => const MainScreen()),
+                    (route) => false,
+                  );
+                  //   Navigator.pushNamed(context, Routes.forgotPasswordScreen);
                 },
               ),
               SizedBox(
