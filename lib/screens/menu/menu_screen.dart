@@ -27,7 +27,7 @@ class _MenuScreenState extends State<MenuScreen> {
       NeumorphismButton(
         icon: const Icon(
           FontAwesomeIcons.user,
-          size: 40,
+          size: 30,
         ),
         onTap: () {
           //   print("1");
@@ -37,8 +37,18 @@ class _MenuScreenState extends State<MenuScreen> {
       ),
       NeumorphismButton(
         icon: const Icon(
+          FontAwesomeIcons.userGroup,
+          size: 30,
+        ),
+        onTap: () {
+          Navigator.pushNamed(context, Routes.settingScreen);
+        },
+        title: "Groups",
+      ),
+      NeumorphismButton(
+        icon: const Icon(
           FontAwesomeIcons.gear,
-          size: 40,
+          size: 30,
         ),
         onTap: () {
           Navigator.pushNamed(context, Routes.settingScreen);

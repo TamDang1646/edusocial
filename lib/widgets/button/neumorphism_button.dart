@@ -3,21 +3,23 @@ import 'package:flutter/widgets.dart' hide BoxDecoration, BoxShadow;
 import 'package:flutter_inset_box_shadow/flutter_inset_box_shadow.dart';
 
 class NeumorphismButton extends StatefulWidget {
-  const NeumorphismButton(
-      {super.key,
-      this.padding = 16.0,
-      this.borderRadius = 10,
-      this.spreadRadius = 1,
-      this.blurRadius = 10,
-      this.offset = 4,
-      this.buttonColor,
-      this.topLeftColor,
-      this.bottomRightColor,
-      required this.icon,
-      required this.onTap,
-      this.width = 100,
-      this.height = 100,
-      this.title});
+  const NeumorphismButton({
+    super.key,
+    this.padding = 16.0,
+    this.borderRadius = 10,
+    this.spreadRadius = 1,
+    this.blurRadius = 10,
+    this.offset = 4,
+    this.buttonColor,
+    this.topLeftColor,
+    this.bottomRightColor,
+    required this.icon,
+    required this.onTap,
+    this.width = 100,
+    this.height = 100,
+    this.title,
+    this.titleStyle,
+  });
   final double? width;
   final double? height;
   final double padding;
@@ -31,26 +33,28 @@ class NeumorphismButton extends StatefulWidget {
   final Icon icon;
   final Function onTap;
   final String? title;
+  final TextStyle? titleStyle;
   @override
   State<NeumorphismButton> createState() => _NeumorphismButtonState();
 }
 
 class _NeumorphismButtonState extends State<NeumorphismButton> {
-  late final double? _width;
-  late final double? _height;
-  late final double _padding;
-  late final double _borderRadius;
-  late final double _spreadRadius;
-  late final double _blurRadius;
-  late final double _offset;
-  late final Color? _buttonColor;
-  late final Color? _topLeftColor;
-  late final Color? _bottomRightColor;
-  late final Icon _icon;
-  late final Function _onTap;
+  late double? _width;
+  late double? _height;
+  late double _padding;
+  late double _borderRadius;
+  late double _spreadRadius;
+  late double _blurRadius;
+  late double _offset;
+  late Color? _buttonColor;
+  late Color? _topLeftColor;
+  late Color? _bottomRightColor;
+  late Icon _icon;
+  late Function _onTap;
   late Offset _offsetShadow;
-  late final String? _title;
+  late String? _title;
   bool isPressed = false;
+  late TextStyle? _titleStyle;
   @override
   void initState() {
     _width = widget.width;
@@ -66,6 +70,7 @@ class _NeumorphismButtonState extends State<NeumorphismButton> {
     _topLeftColor = widget.topLeftColor;
     _onTap = widget.onTap;
     _title = widget.title;
+    _titleStyle = widget.titleStyle;
     // TODO: implement initState
     super.initState();
   }
@@ -115,10 +120,15 @@ class _NeumorphismButtonState extends State<NeumorphismButton> {
               ),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   _icon,
-                  const SizedBox(height: 4),
-                  if (_title != null) Text(_title!),
+                  const SizedBox(height: 8),
+                  if (_title != null)
+                    Text(
+                      _title!,
+                      style: _titleStyle ?? const TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
+                    ),
                 ],
               )),
         ),

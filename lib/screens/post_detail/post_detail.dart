@@ -1,20 +1,14 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
+import 'package:my_app/Model/Comment.dart';
+import 'package:my_app/Model/Posts.dart';
+import 'package:my_app/Model/User.dart';
 import 'package:my_app/constains/app_colors.dart';
-import 'package:my_app/log/logger.dart';
 import 'package:my_app/services/user/user_service.dart';
 import 'package:my_app/utils/app_utils.dart';
 import 'package:my_app/widgets/avatar/avatar.dart';
+import 'package:my_app/widgets/comment/comment.dart';
 import 'package:my_app/widgets/post_view/post_view.dart';
 import 'package:my_app/widgets/text_input/text-field-input.dart';
-
-import '../../Model/Comment.dart';
-import '../../Model/Posts.dart';
-import '../../Model/User.dart';
-import '../../widgets/comment/comment.dart';
 
 class PostDetail extends StatefulWidget {
   const PostDetail({super.key});

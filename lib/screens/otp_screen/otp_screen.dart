@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:my_app/constains/app_constaint.dart';
-import 'package:my_app/screens/home_screen/home_screen.dart';
 import 'package:my_app/screens/main_screen/main_screen.dart';
 import 'package:my_app/widgets/flash_message/flash_message.dart';
 
 import '../../constains/images.dart';
-import '../../routes/routes.dart';
 import '../../utils/app_utils.dart';
 import '../../widgets/button/button-custom.dart';
 import '../../widgets/text_input/text-field-input.dart';
@@ -99,11 +97,11 @@ class _OTPScreenState extends State<OTPScreen> {
                   //   },
                 ),
               ),
-              Row(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 8),
-                    child: Container(
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 8),
+                child: Row(
+                  children: [
+                    Container(
                       width: 150,
                       child: TextInputCustom(
                         label: "OTP",
@@ -111,26 +109,26 @@ class _OTPScreenState extends State<OTPScreen> {
                         width: Responsive.scale(200, context),
                       ),
                     ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 8),
-                    child: TextButton(
-                      child: const Text("Send OTP"),
-                      onPressed: () {
-                        if (_sdtController.text.isEmpty) {
-                          Toast(
-                            context,
-                            errorMessage: "Số điện thoại không được để trống",
-                            errorCode: 100,
-                            type: AppError.error,
-                          ).showToast();
-                        } else {
-                          print("sent OTP");
-                        }
-                      },
-                    ),
-                  )
-                ],
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 8),
+                      child: TextButton(
+                        child: const Text("Send OTP"),
+                        onPressed: () {
+                          if (_sdtController.text.isEmpty) {
+                            Toast(
+                              context,
+                              errorMessage: "Số điện thoại không được để trống",
+                              errorCode: 100,
+                              type: AppError.error,
+                            ).showToast();
+                          } else {
+                            print("sent OTP");
+                          }
+                        },
+                      ),
+                    )
+                  ],
+                ),
               ),
               SizedBox(height: Responsive.scale(50, context)),
               RoundedButton(
