@@ -1,7 +1,4 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
 import 'package:my_app/Model/Posts.dart';
@@ -39,19 +36,25 @@ class _ScrollViewInfiniteState extends State<PostScrollView> {
         if (!snapshot.hasData) {
           return const Center(child: CircularProgressIndicator());
         } else {
-          return ListView.builder(
-            itemCount: _fetchPage(1),
-            scrollDirection: Axis.vertical,
-            itemBuilder: (BuildContext context, int index) {
-              return PostView(
-                post: snapshot.data[index],
-                onTap: () => Navigator.pushNamed(
-                  context,
-                  Routes.postDetailScreen,
-                  arguments: PostDetailState(postDetail: snapshot.data[index]),
-                ),
-              );
-            },
+          return MediaQuery.removePadding(
+            removeTop: true,
+            context: context,
+            child: ListView.builder(
+              physics: const NeverScrollableScrollPhysics(),
+              shrinkWrap: true,
+              itemCount: _fetchPage(1),
+              //   scrollDirection: Axis.vertical,
+              itemBuilder: (BuildContext context, int index) {
+                return PostView(
+                  post: snapshot.data[index],
+                  onTap: () => Navigator.pushNamed(
+                    context,
+                    Routes.postDetailScreen,
+                    arguments: PostDetailState(postDetail: snapshot.data[index]),
+                  ),
+                );
+              },
+            ),
           );
         }
       });

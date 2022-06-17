@@ -5,16 +5,17 @@ import 'package:my_app/utils/app_utils.dart';
 import 'package:my_app/widgets/avatar/avatar.dart';
 
 class AvatarName extends StatelessWidget {
-  const AvatarName({super.key, required this.item, this.onTap});
+  const AvatarName({super.key, required this.item, this.onTap, this.isCircle = true});
   final dynamic item;
   final Function()? onTap;
+  final bool isCircle;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       height: 110,
       width: 80,
       child: Padding(
-        padding: const EdgeInsets.all(10.0),
+        padding: const EdgeInsets.only(top: 10.0, right: 10.0),
         child: InkWell(
           onTap: onTap ??
               () {
@@ -25,8 +26,9 @@ class AvatarName extends StatelessWidget {
               Avatar(
                 url: item!['avatarUrl'] ?? "",
                 localUrl: item!['localUrl'] ?? "",
-                width: 50,
-                height: 50,
+                width: 60,
+                height: 60,
+                isCircle: isCircle,
               ),
               SizedBox(
                 height: Responsive.scale(10, context),

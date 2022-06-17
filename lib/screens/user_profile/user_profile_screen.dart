@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:my_app/Model/Posts.dart';
-import 'package:my_app/services/user/user_service.dart';
 import 'package:my_app/widgets/avatar/avatar.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
+
+import '../../constains/mock_data.dart';
+import '../../utils/app_utils.dart';
+import '../../widgets/avatar/avatar_name.dart';
 
 class UserProfileScreen extends StatefulWidget {
   const UserProfileScreen({super.key});
@@ -184,6 +187,7 @@ class _UserProfileScreenState extends State<UserProfileScreen> {
             renderEduInfo(context),
             renderProfileInfo(context),
             renderFriends(context),
+            renderGroups(context),
           ],
         ),
       ),
@@ -471,18 +475,6 @@ Widget renderFriends(BuildContext context) {
         // height: 200,
         width: MediaQuery.of(context).size.width - 32,
         decoration: BoxDecoration(
-          //   gradient: LinearGradient(
-          //     colors: [
-          //       Colors.green.shade50,
-          //       Colors.green.shade100,
-          //       Colors.yellow.shade50,
-          //       Colors.yellow.shade100,
-          //       Colors.purple.shade50,
-          //       Colors.purple.shade100,
-          //     ],
-          //     begin: Alignment.topLeft,
-          //     end: Alignment.bottomRight,
-          //   ),
           color: Colors.grey[200],
           borderRadius: BorderRadius.circular(10),
           //   color: const Color(0xFFE7ECEF),
@@ -515,14 +507,91 @@ Widget renderFriends(BuildContext context) {
             const SizedBox(
               height: 8,
             ),
-            FutureBuilder(
-              future: UserService().getUser(),
-              builder: ((context, snapshot) => Container(
-                    width: 60,
-                    height: 60,
-                    color: Colors.amber,
-                  )),
-            )
+            Container(
+              height: Responsive.scale(100, context),
+              decoration: const BoxDecoration(
+                // border: Border.all(),
+                color: Colors.transparent,
+              ),
+              child: MediaQuery.removePadding(
+                removeLeft: true,
+                context: context,
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemBuilder: (context, index) {
+                    return AvatarName(item: mockTimeline[index]);
+                  },
+                  itemCount: mockTimeline.length,
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+      Positioned(
+        top: 8,
+        right: 8,
+        child: IconButton(icon: const Icon(Icons.edit), onPressed: () {}),
+      )
+    ]),
+  );
+}
+
+Widget renderGroups(BuildContext context) {
+  return Container(
+    margin: const EdgeInsets.symmetric(vertical: 8),
+    child: Stack(children: [
+      Container(
+        padding: const EdgeInsets.all(16),
+        // height: 200,
+        width: MediaQuery.of(context).size.width - 32,
+        decoration: BoxDecoration(
+          color: Colors.grey[200],
+          borderRadius: BorderRadius.circular(10),
+          //   color: const Color(0xFFE7ECEF),
+          boxShadow: const [
+            BoxShadow(
+              blurRadius: 5,
+              offset: Offset(-4, -4),
+              color: Colors.white,
+              spreadRadius: 1,
+            ),
+            BoxShadow(
+              blurRadius: 5,
+              offset: Offset(4, 4),
+              color: Color(0xFFA7A9AF),
+              spreadRadius: 1,
+            ),
+          ],
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Text(
+              "Groups",
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            const SizedBox(
+              height: 8,
+            ),
+            Container(
+              height: Responsive.scale(100, context),
+              decoration: const BoxDecoration(
+                // border: Border.all(),
+                color: Colors.transparent,
+              ),
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemBuilder: (context, index) {
+                  return AvatarName(item: mockTimeline[index]);
+                },
+                itemCount: mockTimeline.length,
+              ),
+            ),
           ],
         ),
       ),

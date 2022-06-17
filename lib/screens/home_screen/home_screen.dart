@@ -1,22 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter_native_splash/flutter_native_splash.dart';
-import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
 import 'package:my_app/Model/Posts.dart';
-import 'package:my_app/constains/app_colors.dart';
+import 'package:my_app/Model/User.dart';
 import 'package:my_app/constains/mock_data.dart';
-import 'package:my_app/constains/posts.dart';
-import 'package:my_app/log/logger.dart';
 import 'package:my_app/services/user/user_service.dart';
 import 'package:my_app/utils/app_utils.dart';
 import 'package:my_app/widgets/avatar/avatar_name.dart';
-import 'package:my_app/widgets/scrollview_infinite/home_posts_view.dart';
-import 'dart:developer';
-import '../../Model/User.dart';
-import '../../widgets/avatar/avatar.dart';
-import '../../widgets/bottom_bar/bottom_bar.dart';
-import '../../widgets/post_view/post_view.dart';
+import 'package:simple_gradient_text/simple_gradient_text.dart';
+
+import '../../widgets/scrollview_infinite/home_posts_view.dart';
 
 class MyHomeScreen extends StatefulWidget {
   const MyHomeScreen({Key? key}) : super(key: key);
@@ -43,85 +36,86 @@ class _MyHomeScreenState extends State<MyHomeScreen> {
   Widget build(BuildContext context) {
     print("home");
     return Scaffold(
-      body: Container(
-        decoration: BoxDecoration(color: AppColors.background),
-        child: Column(
-          children: [
-            SizedBox(
-              height: MediaQuery.of(context).viewPadding.top,
-            ),
-            Container(
-              height: Responsive.scale(60, context),
-              padding: EdgeInsets.symmetric(horizontal: Responsive.scale(16, context)),
-              decoration: BoxDecoration(color: AppColors.background),
-              child: FutureBuilder<User>(
-                  future: UserService().getUser(),
-                  builder: (context, snapshot) {
-                    if (!snapshot.hasData) {
-                      return Container();
-                    }
-                    return Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Avatar(
-                          url: snapshot.data!.avatar!,
-                        ),
-                        const SizedBox(
-                          width: 20,
-                        ),
-                        Text(snapshot.data!.userName!,
-                            style: TextStyle(
-                              fontSize: Responsive.scale(18, context),
-                              fontWeight: FontWeight.bold,
-                            )),
-                        const Expanded(child: SizedBox()),
-                        Center(
-                          child: Ink(
-                            decoration: const ShapeDecoration(
-                              shape: CircleBorder(),
-                            ),
-                            child: IconButton(
-                              icon: Icon(
-                                Icons.search,
-                                size: Responsive.scale(22, context),
+      backgroundColor: Colors.white,
+      body: Column(
+        children: [
+          SizedBox(
+            height: MediaQuery.of(context).viewPadding.top,
+          ),
+          Container(
+            margin: const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
+            child: FutureBuilder<User>(
+                future: UserService().getUser(),
+                builder: (context, snapshot) {
+                  return Row(
+                    children: [
+                      RichText(
+                        text: TextSpan(
+                          text: "Hello ",
+                          style: const TextStyle(
+                            color: Colors.black,
+                            fontFamily: "Dancing_Script",
+                            fontWeight: FontWeight.bold,
+                            fontSize: 26,
+                          ),
+                          children: [
+                            WidgetSpan(
+                              child: GradientText(
+                                "${snapshot.data?.userName!}!",
+                                colors: const [Colors.pink, Colors.orange],
+                                style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
                               ),
-                              onPressed: () {},
-                            ),
+                            )
+                            // TextSpan(
+                            //   text: "${snapshot.data?.userName!}!",
+                            // ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  );
+                }),
+          ),
+          Expanded(
+            child: SingleChildScrollView(
+              physics: const ScrollPhysics(),
+              child: Column(
+                children: [
+                  Container(
+                    margin: const EdgeInsets.only(bottom: 10),
+                    height: Responsive.scale(100, context),
+                    width: MediaQuery.of(context).size.width - 20,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: Row(
+                      children: [
+                        const AvatarName(item: {'name': 'You', 'localUrl': 'assets/images/add.png'}),
+                        Expanded(
+                          child: ListView.builder(
+                            key: _listTimeLineKey,
+                            scrollDirection: Axis.horizontal,
+                            itemBuilder: (context, index) {
+                              return AvatarName(
+                                item: mockTimeline[index],
+                                isCircle: false,
+                              );
+                            },
+                            itemCount: mockTimeline.length,
                           ),
                         ),
                       ],
-                    );
-                  }),
-            ),
-            Container(
-              height: Responsive.scale(100, context),
-              decoration: BoxDecoration(
-                  // border: Border.all(),
-                  color: AppColors.gray1),
-              child: Row(
-                children: [
-                  const AvatarName(item: {'name': 'You', 'localUrl': 'assets/images/add.png'}),
-                  Expanded(
-                    child: ListView.builder(
-                      key: _listTimeLineKey,
-                      scrollDirection: Axis.horizontal,
-                      itemBuilder: (context, index) {
-                        return AvatarName(item: mockTimeline[index]);
-                      },
-                      itemCount: mockTimeline.length,
                     ),
+                  ),
+                  PostScrollView(
+                    data: post,
                   ),
                 ],
               ),
             ),
-            Expanded(
-                //   padding: EdgeInsets.all(0),
-                child: PostScrollView(
-              data: post,
-            )),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

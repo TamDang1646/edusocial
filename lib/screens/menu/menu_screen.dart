@@ -6,11 +6,11 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:my_app/Model/User.dart';
 import 'package:my_app/routes/routes.dart';
+import 'package:my_app/screens/login_screen/login_screen.dart';
 import 'package:my_app/services/user/user_service.dart';
 import 'package:my_app/utils/app_utils.dart';
 
 import '../../widgets/avatar/avatar.dart';
-import '../../widgets/bottom_bar/bottom_bar.dart';
 import '../../widgets/button/neumorphism_button.dart';
 import '../../widgets/clipper/clippers.dart';
 
@@ -55,6 +55,20 @@ class _MenuScreenState extends State<MenuScreen> {
         },
         title: "Settings",
       ),
+      NeumorphismButton(
+        icon: const Icon(
+          Icons.logout,
+          size: 30,
+        ),
+        onTap: () {
+          Navigator.pushAndRemoveUntil(
+            context,
+            MaterialPageRoute<void>(builder: (BuildContext context) => const LoginScreen()),
+            (route) => false,
+          );
+        },
+        title: "LogOut",
+      ),
     ];
   }
 
@@ -68,11 +82,11 @@ class _MenuScreenState extends State<MenuScreen> {
             clipper: ClippersMenu(),
             child: Container(
               padding: EdgeInsets.only(top: MediaQuery.of(context).viewPadding.top, bottom: 8),
-              height: Responsive.scale(MediaQuery.of(context).viewPadding.top + 150, context),
+              height: Responsive.scale(MediaQuery.of(context).viewPadding.top + 200, context),
               width: MediaQuery.of(context).size.width,
               decoration: BoxDecoration(
                   color: Colors.primaries[10],
-                  border: Border.all(),
+                  //   border: Border.all(),
                   image: const DecorationImage(image: AssetImage("assets/images/profile.png"), fit: BoxFit.cover)
                   // borderRadius: const BorderRadius.only(
                   //   bottomLeft: Radius.circular(50),
@@ -124,7 +138,7 @@ class _MenuScreenState extends State<MenuScreen> {
           Container(
             height: MediaQuery.of(context).size.height,
             decoration: const BoxDecoration(color: Colors.transparent),
-            margin: EdgeInsets.only(top: Responsive.scale(MediaQuery.of(context).viewPadding.top + 110, context)),
+            margin: EdgeInsets.only(top: Responsive.scale(MediaQuery.of(context).viewPadding.top + 140, context)),
             child: SingleChildScrollView(
               padding: const EdgeInsets.all(16),
               child: Column(

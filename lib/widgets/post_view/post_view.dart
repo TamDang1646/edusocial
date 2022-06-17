@@ -5,9 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:my_app/Model/Posts.dart';
-import 'package:my_app/log/logger.dart';
 
-import '../../constains/mock_data.dart';
 import '../../utils/app_utils.dart';
 import '../avatar/avatar.dart';
 
@@ -43,14 +41,32 @@ class _PostViewState extends State<PostView> {
       child: Padding(
         padding: EdgeInsets.symmetric(
           vertical: Responsive.scale(8, context),
-          horizontal: Responsive.scale(4, context),
+          horizontal: Responsive.scale(10, context),
         ),
         child: Container(
           padding: EdgeInsets.symmetric(
             horizontal: Responsive.scale(16, context),
             vertical: Responsive.scale(8, context),
           ),
-          decoration: const BoxDecoration(color: Colors.white),
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(10),
+            //   color: const Color(0xFFE7ECEF),
+            boxShadow: const [
+              BoxShadow(
+                blurRadius: 5,
+                offset: Offset(-2, -2),
+                color: Colors.white,
+                spreadRadius: 1,
+              ),
+              BoxShadow(
+                blurRadius: 5,
+                offset: Offset(2, 2),
+                color: Color(0xFFA7A9AF),
+                spreadRadius: 1,
+              ),
+            ],
+          ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -66,32 +82,11 @@ class _PostViewState extends State<PostView> {
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Container(
-                          width: Responsive.scale(MediaQuery.of(context).size.width * 2 / 4, context),
-                          //   decoration: BoxDecoration(border: Border.all()),
-                          child: RichText(
-                            maxLines: 2,
-                            overflow: TextOverflow.ellipsis,
-                            textAlign: TextAlign.left,
-                            text: TextSpan(
-                              text: _post.userName,
-                              style: const TextStyle(fontWeight: FontWeight.bold, color: Colors.black, fontSize: 18),
-                              children: [
-                                if (_post.postAddress != null)
-                                  TextSpan(
-                                      text: ' is in ',
-                                      style: const TextStyle(fontWeight: FontWeight.normal, fontSize: 15),
-                                      children: [
-                                        TextSpan(
-                                          text: _post.postAddress,
-                                          style: const TextStyle(fontWeight: FontWeight.w600),
-                                        ),
-                                      ]),
-                              ],
-                            ),
-                          ),
+                        Text(
+                          _post.userName!,
+                          style: const TextStyle(fontWeight: FontWeight.bold, color: Colors.black, fontSize: 18),
                         ),
-                        SizedBox(height: 8),
+                        const SizedBox(height: 8),
                         Text(
                           _post.postTime!,
                           style: TextStyle(
@@ -122,8 +117,9 @@ class _PostViewState extends State<PostView> {
                 child: Text(
                   _post.title ?? "",
                   style: TextStyle(
-                    fontSize: Responsive.scale(14, context),
-                    fontWeight: FontWeight.w500,
+                    fontSize: Responsive.scale(16, context),
+                    fontFamily: "Roboto",
+                    fontWeight: FontWeight.w400,
                   ),
                 ),
               ),
@@ -144,77 +140,85 @@ class _PostViewState extends State<PostView> {
                     },
                   ),
                 ),
-              Row(
-                children: [
-                  InkWell(
-                    onTap: () {
-                      print("22");
-                      setState(() {
-                        _liked = !_liked;
-                      });
-                    },
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Icon(
-                          _liked ? Icons.thumb_up_alt : Icons.thumb_up_alt_outlined,
-                          size: Responsive.scale(18, context),
-                          color: _liked ? Colors.pink[200] : Colors.black,
-                        ),
-                        const SizedBox(width: 8),
-                        Text(
-                          _post.like.toString(),
-                          style: TextStyle(fontSize: Responsive.scale(14, context)),
-                        ),
-                      ],
+              Container(
+                padding: EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                decoration: BoxDecoration(
+                  //   color: Colors.pink[100]?.withOpacity(0.4),
+                  gradient: LinearGradient(colors: [Colors.pink[100]!, Colors.orange[100]!, Colors.yellow[100]!]),
+                  borderRadius: BorderRadius.circular(4),
+                ),
+                child: Row(
+                  children: [
+                    InkWell(
+                      onTap: () {
+                        print("22");
+                        setState(() {
+                          _liked = !_liked;
+                        });
+                      },
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Icon(
+                            _liked ? Icons.thumb_up_alt : Icons.thumb_up_alt_outlined,
+                            size: Responsive.scale(18, context),
+                            color: _liked ? Colors.pink[200] : Colors.black,
+                          ),
+                          const SizedBox(width: 8),
+                          Text(
+                            _post.like.toString(),
+                            style: TextStyle(fontSize: Responsive.scale(14, context)),
+                          ),
+                        ],
+                      ),
                     ),
-                  ),
-                  const SizedBox(
-                    width: 20,
-                  ),
-                  InkWell(
-                    onTap: () {
-                      print("22");
-                    },
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Icon(
-                          Icons.comment_outlined,
-                          size: Responsive.scale(18, context),
-                        ),
-                        const SizedBox(width: 8),
-                        Text(
-                          (_post.comment ?? []).length.toString(),
-                          style: TextStyle(fontSize: Responsive.scale(14, context)),
-                        ),
-                      ],
+                    const SizedBox(
+                      width: 20,
                     ),
-                  ),
-                  const Expanded(child: SizedBox()),
-                  InkWell(
-                    onTap: () {
-                      print("22");
-                    },
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Icon(
-                          Icons.share_outlined,
-                          size: Responsive.scale(18, context),
-                        ),
-                        const SizedBox(width: 8),
-                        Text(
-                          (_post.share ?? 0).toString(),
-                          style: TextStyle(fontSize: Responsive.scale(14, context)),
-                        ),
-                      ],
+                    InkWell(
+                      onTap: () {
+                        print("22");
+                      },
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Icon(
+                            Icons.comment_outlined,
+                            size: Responsive.scale(18, context),
+                          ),
+                          const SizedBox(width: 8),
+                          Text(
+                            (_post.comment ?? []).length.toString(),
+                            style: TextStyle(fontSize: Responsive.scale(14, context)),
+                          ),
+                        ],
+                      ),
                     ),
-                  ),
-                ],
+                    const Expanded(child: SizedBox()),
+                    InkWell(
+                      onTap: () {
+                        print("22");
+                      },
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Icon(
+                            Icons.share_outlined,
+                            size: Responsive.scale(18, context),
+                          ),
+                          const SizedBox(width: 8),
+                          Text(
+                            (_post.share ?? 0).toString(),
+                            style: TextStyle(fontSize: Responsive.scale(14, context)),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
               )
             ],
           ),

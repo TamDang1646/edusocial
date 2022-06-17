@@ -5,7 +5,7 @@ class ClippersMenu extends CustomClipper<Path> {
   Path getClip(Size size) {
     // TODO: implement getClip
     Path path = Path();
-    path.lineTo(0, size.height - 120);
+    path.lineTo(0, size.height - 100);
     path.quadraticBezierTo(0, size.height - 60, 60, size.height - 60);
     path.quadraticBezierTo(60, size.height - 60, size.width - 60, size.height - 60);
     path.quadraticBezierTo(size.width, size.height - 60, size.width, size.height);

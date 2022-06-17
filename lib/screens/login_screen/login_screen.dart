@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:my_app/constains/app_constaint.dart';
 import 'package:my_app/routes/routes.dart';
-import 'package:my_app/routes/screen_stack.dart';
 import 'package:my_app/utils/app_utils.dart';
 import 'package:my_app/widgets/flash_message/flash_message.dart';
+
 import '../../constains/images.dart';
 import '../../widgets/button/button-custom.dart';
 import '../../widgets/text_input/text-field-input.dart';
@@ -137,7 +137,7 @@ class _LoginScreenState extends State<LoginScreen> with SingleTickerProviderStat
                       context,
                       errorMessage: "Số điện thoại hoặc mật khẩu không đúng",
                       errorCode: 404,
-                      type: AppError.error,
+                      type: ErrorType.error,
                     ).showToast();
                   }
                   // ignore: avoid_print

@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:my_app/utils/app_utils.dart';
 
 class TextInputCustom extends StatefulWidget {
   const TextInputCustom({
     Key? key,
     this.label,
     this.hintLabel,
-    this.height = 50,
-    this.width = 330,
+    this.height,
+    this.width,
     this.obscureText = false,
     this.icon,
     this.prefixIcon,
@@ -18,8 +17,8 @@ class TextInputCustom extends StatefulWidget {
   }) : super(key: key);
   final String? label;
   final String? hintLabel;
-  final double height;
-  final double width;
+  final double? height;
+  final double? width;
   final bool obscureText;
   final Icon? icon;
   final Icon? prefixIcon;
@@ -50,8 +49,8 @@ class _TextInputCustomState extends State<TextInputCustom> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: Responsive.scale(widget.width, context),
-      height: Responsive.scale(widget.height, context),
+      width: widget.width,
+      height: widget.height,
       child: TextFormField(
         controller: widget.controller,
         decoration: InputDecoration(
