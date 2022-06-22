@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_app/routes/routes.dart';
-
-import 'routes/screen_stack.dart';
+import 'package:my_app/routes/screen_stack.dart';
 
 void main() {
 //   WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
@@ -20,6 +19,24 @@ class MyApp extends StatelessWidget {
       initialRoute: Routes.loginScreen,
       routes: getRoutes(),
       theme: ThemeData(fontFamily: "Roboto-Regular"),
+      //   supportedLocales: const [
+      //     Locale('vi', 'VN'),
+      //     Locale('en', 'US'),
+      //   ],
+      //   localizationsDelegates: const [
+      //     AppLocalizations.delegate,
+      //     GlobalMaterialLocalizations.delegate,
+      //     GlobalWidgetsLocalizations.delegate,
+      //   ],
+      //   localeResolutionCallback: (locale, supportedLocales) {
+      //     for (var supportedLocale in supportedLocales) {
+      //       if (supportedLocale.languageCode == locale?.languageCode &&
+      //           supportedLocale.countryCode == locale?.countryCode) {
+      //         return supportedLocale;
+      //       }
+      //     }
+      //     return supportedLocales.first;
+      //   },
     );
   }
 }

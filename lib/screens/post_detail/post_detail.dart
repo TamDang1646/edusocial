@@ -88,22 +88,6 @@ class _PostDetailState extends State<PostDetail> {
                     decoration: BoxDecoration(
                       border: Border.all(color: Colors.black12),
                       color: Colors.white,
-                      //   borderRadius: BorderRadius.circular(10),
-                      //   //   color: const Color(0xFFE7ECEF),
-                      //   boxShadow: const [
-                      //     BoxShadow(
-                      //       blurRadius: 5,
-                      //       offset: Offset(-2, -2),
-                      //       color: Colors.white,
-                      //       spreadRadius: 1,
-                      //     ),
-                      //     BoxShadow(
-                      //       blurRadius: 5,
-                      //       offset: Offset(2, 2),
-                      //       color: Color(0xFFA7A9AF),
-                      //       spreadRadius: 1,
-                      //     ),
-                      //   ],
                     ),
                     // width: MediaQuery.of(context).size.width - 20,
                     child: Row(

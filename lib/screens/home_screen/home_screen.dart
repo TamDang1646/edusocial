@@ -7,6 +7,7 @@ import 'package:my_app/constains/mock_data.dart';
 import 'package:my_app/services/user/user_service.dart';
 import 'package:my_app/utils/app_utils.dart';
 import 'package:my_app/widgets/avatar/avatar_name.dart';
+import 'package:my_app/widgets/nav_bar/nav_bar.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
 
 import '../../widgets/scrollview_infinite/home_posts_view.dart';
@@ -36,6 +37,7 @@ class _MyHomeScreenState extends State<MyHomeScreen> {
   Widget build(BuildContext context) {
     print("home");
     return Scaffold(
+      drawer: NavBar(),
       backgroundColor: Colors.white,
       body: Column(
         children: [
@@ -53,17 +55,24 @@ class _MyHomeScreenState extends State<MyHomeScreen> {
                         text: TextSpan(
                           text: "Hello ",
                           style: const TextStyle(
-                            color: Colors.black,
+                            color: Colors.redAccent,
                             fontFamily: "Dancing_Script",
                             fontWeight: FontWeight.bold,
                             fontSize: 26,
                           ),
                           children: [
                             WidgetSpan(
-                              child: GradientText(
-                                "${snapshot.data?.userName!}!",
-                                colors: const [Colors.pink, Colors.orange],
-                                style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                              child: InkWell(
+                                highlightColor: Colors.transparent,
+                                splashFactory: NoSplash.splashFactory,
+                                onTap: () {
+                                  Scaffold.of(context).openDrawer();
+                                },
+                                child: GradientText(
+                                  "${snapshot.data?.userName!}!",
+                                  colors: const [Colors.pink, Colors.orange],
+                                  style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                                ),
                               ),
                             )
                             // TextSpan(

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
 import '../../widgets/bottom_bar/bottom_bar.dart';
+import '../../widgets/nav_bar/nav_bar.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -32,6 +32,7 @@ class _MainScreenState extends State<MainScreen> {
         showUnselectedLabels: true,
       ),
       body: BottomBar.stackScreens[_selectedIndex],
+      drawer: const NavBar(),
     );
   }
 }

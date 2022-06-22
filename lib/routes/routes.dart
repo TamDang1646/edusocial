@@ -6,9 +6,10 @@ class Routes {
   static const String changePasswordScreen = "/change_password_screen";
   static const String otpScreen = "/otp_screen";
   static const String postDetailScreen = "/post_detail_screen";
-  static const String menuScreen = "/menu_screen";
   static const String groupScreen = "/group_screen";
   static const String messageScreen = "/message_screen";
   static const String settingScreen = "/setting_screen";
   static const String userProfileScreen = "/user_profile_screen";
+  static const String mainScreen = "/main_screen";
+  static const String joinMeetingingScreen = "/join_meetinging_screen";
 }
