@@ -1,7 +1,7 @@
-import 'package:edusocial/screens/classroom/classroom.dart';
-import 'package:edusocial/screens/group/group_screen.dart';
-import 'package:edusocial/screens/home_screen/home_screen.dart';
-import 'package:edusocial/screens/message/message_screen.dart';
+import 'package:edusocial/pages/classroom/classroom.dart';
+import 'package:edusocial/pages/group/group_screen.dart';
+import 'package:edusocial/pages/home_screen/home_screen.dart';
+import 'package:edusocial/pages/message/message_screen.dart';
 import 'package:flutter/material.dart';
 
 class BottomBar {

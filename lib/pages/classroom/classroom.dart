@@ -1,6 +1,6 @@
-import 'package:edusocial/screens/classroom/exercise_view.dart';
-import 'package:edusocial/screens/classroom/room_meeting_view.dart';
-import 'package:edusocial/screens/classroom/timetable_view.dart';
+import 'package:edusocial/pages/classroom/exercise_view.dart';
+import 'package:edusocial/pages/classroom/room_meeting_view.dart';
+import 'package:edusocial/pages/classroom/timetable_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';

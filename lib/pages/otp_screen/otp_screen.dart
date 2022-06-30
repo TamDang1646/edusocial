@@ -2,8 +2,8 @@ import 'dart:async';
 
 import 'package:edusocial/constains/app_constaint.dart';
 import 'package:edusocial/constains/images.dart';
+import 'package:edusocial/pages/main_screen/main_screen.dart';
 import 'package:edusocial/routes/routes.dart';
-import 'package:edusocial/screens/main_screen/main_screen.dart';
 import 'package:edusocial/utils/app_utils.dart';
 import 'package:edusocial/widgets/button/button-custom.dart';
 import 'package:edusocial/widgets/flash_message/flash_message.dart';

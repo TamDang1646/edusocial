@@ -1,6 +1,6 @@
 import 'package:edusocial/Model/Posts.dart';
+import 'package:edusocial/pages/post_detail/post_detail.dart';
 import 'package:edusocial/routes/routes.dart';
-import 'package:edusocial/screens/post_detail/post_detail.dart';
 import 'package:edusocial/widgets/post_view/post_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
