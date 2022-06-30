@@ -1,5 +1,6 @@
+import 'package:edusocial/utils/app_utils.dart';
 import 'package:flutter/material.dart';
-import 'package:my_app/utils/app_utils.dart';
+
 import '../../constains/images.dart';
 import '../../routes/routes.dart';
 import '../../widgets/button/button-custom.dart';

@@ -1,9 +1,8 @@
+import 'package:edusocial/widgets/avatar/avatar.dart';
+import 'package:edusocial/widgets/text_input/text-field-input.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:my_app/widgets/avatar/avatar.dart';
-import 'package:my_app/widgets/text_input/text-field-input.dart';
 
 import '../../Model/Comment.dart';
 import '../../utils/app_utils.dart';

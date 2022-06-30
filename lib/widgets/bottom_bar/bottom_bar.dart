@@ -1,8 +1,8 @@
+import 'package:edusocial/screens/classroom/classroom.dart';
+import 'package:edusocial/screens/group/group_screen.dart';
+import 'package:edusocial/screens/home_screen/home_screen.dart';
+import 'package:edusocial/screens/message/message_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:my_app/screens/classroom/classroom.dart';
-import 'package:my_app/screens/group/group_screen.dart';
-import 'package:my_app/screens/home_screen/home_screen.dart';
-import 'package:my_app/screens/message/message_screen.dart';
 
 class BottomBar {
   static final stackScreens = [MyHomeScreen(), GroupScreen(), MessageScreen(), ClassroomScreen()];

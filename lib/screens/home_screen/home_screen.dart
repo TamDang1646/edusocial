@@ -1,13 +1,13 @@
+import 'package:edusocial/Model/Posts.dart';
+import 'package:edusocial/Model/User.dart';
+import 'package:edusocial/constains/mock_data.dart';
+import 'package:edusocial/services/user/user_service.dart';
+import 'package:edusocial/utils/app_utils.dart';
+import 'package:edusocial/widgets/avatar/avatar_name.dart';
+import 'package:edusocial/widgets/nav_bar/nav_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:my_app/Model/Posts.dart';
-import 'package:my_app/Model/User.dart';
-import 'package:my_app/constains/mock_data.dart';
-import 'package:my_app/services/user/user_service.dart';
-import 'package:my_app/utils/app_utils.dart';
-import 'package:my_app/widgets/avatar/avatar_name.dart';
-import 'package:my_app/widgets/nav_bar/nav_bar.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
 
 import '../../widgets/scrollview_infinite/home_posts_view.dart';

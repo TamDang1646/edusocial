@@ -1,14 +1,14 @@
+import 'package:edusocial/Model/Comment.dart';
+import 'package:edusocial/Model/Posts.dart';
+import 'package:edusocial/Model/User.dart';
+import 'package:edusocial/constains/app_colors.dart';
+import 'package:edusocial/services/user/user_service.dart';
+import 'package:edusocial/utils/app_utils.dart';
+import 'package:edusocial/widgets/avatar/avatar.dart';
+import 'package:edusocial/widgets/comment/comment.dart';
+import 'package:edusocial/widgets/post_view/post_view.dart';
+import 'package:edusocial/widgets/text_input/text-field-input.dart';
 import 'package:flutter/material.dart';
-import 'package:my_app/Model/Comment.dart';
-import 'package:my_app/Model/Posts.dart';
-import 'package:my_app/Model/User.dart';
-import 'package:my_app/constains/app_colors.dart';
-import 'package:my_app/services/user/user_service.dart';
-import 'package:my_app/utils/app_utils.dart';
-import 'package:my_app/widgets/avatar/avatar.dart';
-import 'package:my_app/widgets/comment/comment.dart';
-import 'package:my_app/widgets/post_view/post_view.dart';
-import 'package:my_app/widgets/text_input/text-field-input.dart';
 
 class PostDetail extends StatefulWidget {
   const PostDetail({super.key});

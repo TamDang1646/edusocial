@@ -1,10 +1,9 @@
+import 'package:edusocial/routes/routes.dart';
+import 'package:edusocial/utils/app_utils.dart';
+import 'package:edusocial/widgets/avatar/avatar.dart';
+import 'package:edusocial/widgets/clipper/clippers.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-
-import '../../utils/app_utils.dart';
-import '../avatar/avatar.dart';
-import '../clipper/clippers.dart';
 
 class NavBar extends StatelessWidget {
   const NavBar({super.key});
@@ -14,6 +13,8 @@ class NavBar extends StatelessWidget {
     const Key drawerKey = Key("drawer_key");
     var userName = "Dang Tam";
     var userEmail = "abc@gmail.com";
+    var routeName = ModalRoute.of(context)!.settings.name;
+
     return Drawer(
       key: drawerKey,
       width: MediaQuery.of(context).size.width * 3 / 4,
@@ -74,25 +75,44 @@ class NavBar extends StatelessWidget {
             ),
           ),
           ListTile(
-            title: const Text("Home"),
-            leading: const Icon(FontAwesomeIcons.houseChimney),
-            onTap: () {},
-          ),
+              title: const Text("Home"),
+              leading: const Icon(FontAwesomeIcons.houseChimney),
+              onTap: () {
+                Navigator.pop(context);
+                if (routeName != Routes.mainScreen) {
+                  Navigator.pushNamed(context, Routes.mainScreen);
+                }
+              }),
           ListTile(
             title: const Text("Hồ sơ cá nhân"),
             leading: const Icon(FontAwesomeIcons.user),
-            onTap: () {},
+            onTap: () {
+              Navigator.pop(context);
+              if (routeName != Routes.userProfileScreen) {
+                Navigator.pushNamed(context, Routes.userProfileScreen);
+              }
+            },
           ),
           ListTile(
             title: const Text("Đổi mật khẩu"),
             leading: const Icon(Icons.key),
-            onTap: () {},
+            onTap: () {
+              Navigator.pop(context);
+              if (routeName != Routes.otpScreen) {
+                Navigator.pushNamed(context, Routes.otpScreen);
+              }
+            },
             // shape: ,
           ),
           ListTile(
             title: const Text("Setting"),
             leading: const Icon(Icons.settings),
-            onTap: () {},
+            onTap: () {
+              Navigator.pop(context);
+              if (routeName != Routes.settingScreen) {
+                Navigator.pushNamed(context, Routes.settingScreen);
+              }
+            },
             // shape: ,
           ),
         ],

@@ -1,6 +1,6 @@
+import 'package:edusocial/routes/routes.dart';
+import 'package:edusocial/routes/screen_stack.dart';
 import 'package:flutter/material.dart';
-import 'package:my_app/routes/routes.dart';
-import 'package:my_app/routes/screen_stack.dart';
 
 void main() {
 //   WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();

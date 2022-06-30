@@ -1,7 +1,7 @@
 import 'dart:ui';
 
+import 'package:edusocial/utils/app_utils.dart';
 import 'package:flutter/material.dart';
-import 'package:my_app/utils/app_utils.dart';
 
 class Avatar extends StatelessWidget {
   const Avatar({

@@ -1,5 +1,5 @@
-import 'package:my_app/Model/Timetable.dart';
-import 'package:my_app/constains/mock/timetable.dart';
+import 'package:edusocial/Model/Timetable.dart';
+import 'package:edusocial/constains/mock/timetable.dart';
 
 class ClassroomServices {
   Future<List<Timetable>> getTimeTable() async {

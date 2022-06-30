@@ -1,4 +1,4 @@
-# my_app
+# edusocial
 
 A new Flutter project.
 

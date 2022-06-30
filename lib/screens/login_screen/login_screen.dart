@@ -1,8 +1,8 @@
+import 'package:edusocial/constains/app_constaint.dart';
+import 'package:edusocial/routes/routes.dart';
+import 'package:edusocial/utils/app_utils.dart';
+import 'package:edusocial/widgets/flash_message/flash_message.dart';
 import 'package:flutter/material.dart';
-import 'package:my_app/constains/app_constaint.dart';
-import 'package:my_app/routes/routes.dart';
-import 'package:my_app/utils/app_utils.dart';
-import 'package:my_app/widgets/flash_message/flash_message.dart';
 
 import '../../constains/images.dart';
 import '../../widgets/button/button-custom.dart';

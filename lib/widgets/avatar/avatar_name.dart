@@ -1,8 +1,8 @@
+import 'package:edusocial/utils/app_utils.dart';
+import 'package:edusocial/widgets/avatar/avatar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/widgets.dart';
-import 'package:my_app/utils/app_utils.dart';
-import 'package:my_app/widgets/avatar/avatar.dart';
 
 class AvatarName extends StatelessWidget {
   const AvatarName({super.key, required this.item, this.onTap, this.isCircle = true});

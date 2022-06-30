@@ -1,10 +1,10 @@
+import 'package:edusocial/Model/Posts.dart';
+import 'package:edusocial/routes/routes.dart';
+import 'package:edusocial/screens/post_detail/post_detail.dart';
+import 'package:edusocial/widgets/post_view/post_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
-import 'package:my_app/Model/Posts.dart';
-import 'package:my_app/routes/routes.dart';
-import 'package:my_app/screens/post_detail/post_detail.dart';
-import 'package:my_app/widgets/post_view/post_view.dart';
 
 class PostScrollView extends StatefulWidget {
   const PostScrollView({required this.data}) : super();

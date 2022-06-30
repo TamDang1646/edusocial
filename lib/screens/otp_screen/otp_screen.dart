@@ -1,16 +1,15 @@
 import 'dart:async';
 
+import 'package:edusocial/constains/app_constaint.dart';
+import 'package:edusocial/constains/images.dart';
+import 'package:edusocial/routes/routes.dart';
+import 'package:edusocial/screens/main_screen/main_screen.dart';
+import 'package:edusocial/utils/app_utils.dart';
+import 'package:edusocial/widgets/button/button-custom.dart';
+import 'package:edusocial/widgets/flash_message/flash_message.dart';
+import 'package:edusocial/widgets/text_input/text-field-input.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:my_app/constains/app_constaint.dart';
-import 'package:my_app/screens/main_screen/main_screen.dart';
-import 'package:my_app/widgets/text_input/text-field-input.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
-
-import '../../constains/images.dart';
-import '../../utils/app_utils.dart';
-import '../../widgets/button/button-custom.dart';
-import '../../widgets/flash_message/flash_message.dart';
 
 class OTPScreen extends StatefulWidget {
   const OTPScreen({super.key});
@@ -236,9 +235,9 @@ class _OTPScreenState extends State<OTPScreen> {
                       borderRadius: BorderRadius.circular(Responsive.scale(20, context)),
                     ),
                     onPressed: () {
-                      Navigator.pushAndRemoveUntil(
+                      Navigator.pushNamedAndRemoveUntil(
                         context,
-                        MaterialPageRoute<void>(builder: (BuildContext context) => const MainScreen()),
+                        Routes.mainScreen,
                         (route) => false,
                       );
                     },

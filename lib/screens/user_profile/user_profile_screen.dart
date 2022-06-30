@@ -1,7 +1,7 @@
+import 'package:edusocial/Model/Posts.dart';
+import 'package:edusocial/widgets/avatar/avatar.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:my_app/Model/Posts.dart';
-import 'package:my_app/widgets/avatar/avatar.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
 
 import '../../constains/mock_data.dart';

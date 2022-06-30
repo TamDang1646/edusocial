@@ -1,10 +1,10 @@
 import 'dart:math';
 
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:edusocial/Model/Posts.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:my_app/Model/Posts.dart';
 
 import '../../utils/app_utils.dart';
 import '../avatar/avatar.dart';

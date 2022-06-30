@@ -1,6 +1,6 @@
+import 'package:edusocial/constains/app_constaint.dart';
+import 'package:edusocial/utils/app_utils.dart';
 import 'package:flutter/material.dart';
-import 'package:my_app/constains/app_constaint.dart';
-import 'package:my_app/utils/app_utils.dart';
 
 class Toast {
   const Toast(

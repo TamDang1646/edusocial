@@ -1,14 +1,14 @@
-import 'package:my_app/screens/group/group_screen.dart';
-import 'package:my_app/screens/home_screen/home_screen.dart';
-import 'package:my_app/screens/join_room/join_room_screen.dart';
-import 'package:my_app/screens/login_screen/login_screen.dart';
-import 'package:my_app/screens/main_screen/main_screen.dart';
-import 'package:my_app/screens/message/message_screen.dart';
-import 'package:my_app/screens/otp_screen/otp_screen.dart';
-import 'package:my_app/screens/post_detail/post_detail.dart';
-import 'package:my_app/screens/setting/setting_screen.dart';
-import 'package:my_app/screens/signup_screen/signup_screen.dart';
-import 'package:my_app/screens/user_profile/user_profile_screen.dart';
+import 'package:edusocial/screens/group/group_screen.dart';
+import 'package:edusocial/screens/home_screen/home_screen.dart';
+import 'package:edusocial/screens/join_room/join_room_screen.dart';
+import 'package:edusocial/screens/login_screen/login_screen.dart';
+import 'package:edusocial/screens/main_screen/main_screen.dart';
+import 'package:edusocial/screens/message/message_screen.dart';
+import 'package:edusocial/screens/otp_screen/otp_screen.dart';
+import 'package:edusocial/screens/post_detail/post_detail.dart';
+import 'package:edusocial/screens/setting/setting_screen.dart';
+import 'package:edusocial/screens/signup_screen/signup_screen.dart';
+import 'package:edusocial/screens/user_profile/user_profile_screen.dart';
 
 import '../screens/change_password/change_password.dart';
 import '../screens/new_password/new_password.dart';

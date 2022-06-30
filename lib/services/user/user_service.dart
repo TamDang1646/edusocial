@@ -1,7 +1,7 @@
 import 'dart:developer';
 
-import 'package:my_app/constains/mock/user.dart';
-import 'package:my_app/log/logger.dart';
+import 'package:edusocial/constains/mock/user.dart';
+import 'package:edusocial/log/logger.dart';
 
 import '../../Model/User.dart';
 

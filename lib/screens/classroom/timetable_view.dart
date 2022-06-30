@@ -1,7 +1,7 @@
+import 'package:edusocial/Model/Timetable.dart';
+import 'package:edusocial/routes/routes.dart';
+import 'package:edusocial/services/classroom/classroom_services.dart';
 import 'package:flutter/material.dart';
-import 'package:my_app/Model/Timetable.dart';
-import 'package:my_app/routes/routes.dart';
-import 'package:my_app/services/classroom/classroom_services.dart';
 
 class TimetableView extends StatefulWidget {
   const TimetableView({super.key});
