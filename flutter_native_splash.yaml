@@ -1,0 +1,15 @@
+
+flutter_native_splash:
+  android: true
+  ios: true
+  color: "#ffffff"
+  image: assets/splash/edusplash.png
+  # branding: assets/splash/edusplash.png
+  # branding_dark: assets/splash/edusplash.png
+  fullscreen: true
+  android_12:
+    image: assets/splash/edusplash.png
+    color: "#ffffff"
+    fullscreen: true
+
+  web: false
