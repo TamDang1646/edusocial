@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/widgets.dart';
 
-import '../../widgets/bottom_bar/bottom_bar.dart';
-
 class GroupScreen extends StatefulWidget {
   const GroupScreen({super.key});
 
@@ -16,7 +14,7 @@ class _GroupScreenState extends State<GroupScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        child: Center(child: Text("GroupScreen")),
+        child: const Center(child: Text("GroupScreen")),
       ),
     );
   }

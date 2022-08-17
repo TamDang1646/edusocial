@@ -2,16 +2,13 @@ import 'dart:math';
 
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:edusocial/Model/Posts.dart';
+import 'package:edusocial/utils/app_utils.dart';
+import 'package:edusocial/widgets/avatar/avatar.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
-
-import '../../utils/app_utils.dart';
-import '../avatar/avatar.dart';
 
 class PostView extends StatefulWidget {
-  const PostView({this.post, this.onTap}) : super();
-  final post;
+  const PostView({super.key, this.post, this.onTap});
+  final Posts? post;
   final Function()? onTap;
   @override
   State<PostView> createState() => _PostViewState();
@@ -22,7 +19,7 @@ class _PostViewState extends State<PostView> {
   late bool _liked;
   @override
   void initState() {
-    _post = widget.post;
+    _post = widget.post!;
     _liked = false;
     // TODO: implement initState
     super.initState();
@@ -100,7 +97,7 @@ class _PostViewState extends State<PostView> {
                   const Expanded(
                     child: SizedBox(),
                   ),
-                  Container(
+                  SizedBox(
                     width: Responsive.scale(40, context),
                     child: InkWell(
                       hoverColor: Colors.red,
@@ -141,7 +138,7 @@ class _PostViewState extends State<PostView> {
                   ),
                 ),
               Container(
-                padding: EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
                 decoration: BoxDecoration(
                   //   color: Colors.pink[100]?.withOpacity(0.4),
                   gradient: LinearGradient(colors: [Colors.pink[100]!, Colors.orange[100]!, Colors.yellow[100]!]),
