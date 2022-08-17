@@ -29,7 +29,7 @@ samples, guidance on mobile development, and a full API reference.
 <img src="./assets/imageReadme/Screenshot_1660707961.png" width="250" height="600"/>
 
 ## Timetable Screen
-<img src="./assets/imageReadme/Screenshot_1660707930.png.png" width="250" height="600"/>
+<img src="./assets/imageReadme/Screenshot_1660707930.png" width="250" height="600"/>
 
 ## details new Screen
 <img src="./assets/imageReadme/Screenshot_1660707943.png" width="250" height="600"/>
